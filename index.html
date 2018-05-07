@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<style>
+
+body {
+	background-color: #f2f2f2;
+	margin: 0;
+	padding: 0;
+}
+
+#controls {
+	display: inline-block;
+}
+
+#icon {
+	display: inline-block;
+}
+
+h1 {
+font-family: verdana;
+background-color: #4CAF50;
+margin-top:0;
+padding: 6px;
+margin-bottom: 6px;
+}
+
+button {
+font-family: verdana;
+border-radius: 12px;
+border: 2px solid #4CAF50;
+}
+
+#share {
+position: fixed;
+bottom: 0;
+right: 20px;
+background: gray;
+padding-left: 6px;
+padding-right: 6px;
+padding-bottom: 6px;
+}
+
+#share h4{
+margin-bottom: 0;
+margin-top: 0;
+font-family: verdana;
+background-color: gray;
+color: white;
+}
+
+#share i{
+margin-bottom: 0;
+background-color: gray;
+color: white;
+}
+
+
+</style>
+<script type="text/javascript">
+			var lastIndex = 0;
+			
+			function randomImage() {
+				var theImage = document.getElementById('myimage');
+				var imgDir = 'images/';
+				var imgArray = new Array('0.png','1.png','2.png','3.jpg','4.jpg','5.jpg','6.jpg');
+				var imgIndex = 0;
+				
+				if(imgArray.length > 1) {
+					while(imgIndex == lastIndex) {
+						imgIndex = Math.floor(Math.random() * imgArray.length);
+					}
+					lastIndex = imgIndex;
+				
+					var imgPath = imgDir + imgArray[imgIndex];
+					
+					theImage.src = imgPath;
+					theImage.alt = imgArray[imgIndex];
+				}
+				else {
+					return false;
+				}
+			}
+			
+			function openimage() {
+				var imgFullURL = document.getElementById('myimage').src;
+				window.open(imgFullURL);
+			}
+</script>
+
+</head>
+<body onload="randomImage()">
+<center><h1>Completelyoutofcontext.ml</h1></center>
+
+<center><!--advert--></center>
+
+<center><img id="myimage" src="images/0.png" alt="0.png" width="600px"></center>
+
+<center>
+<div id="controls">
+<a href="index.html"><button>New Random Image</button></a>
+</div>
+<div id="controls">
+<button onclick="openimage()">view Image</button>
+</div>
+</center>
+
+<div id="share">
+<div id="icon"><h4>Share this page</h4></div>
+<div id="icon"><i class="fab fa-reddit-alien"></i></div>
+<div id="icon"><a href="https://twitter.com/home?status=Check%20out%20http%3A//completelyoutofcontext.ml%20for%20some%20pictures%20that%20are%20completely%20out%20of%20context!"><i class="fab fa-twitter"></i></a></div>
+<div id="icon"><a href="https://www.facebook.com/sharer/sharer.php?u=http://completelyoutofcontext.ml"><div id="icon"><i class="fab fa-facebook-square"></i></a></div>
+</div>
+
+</body>
+</html>
